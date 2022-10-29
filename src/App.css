@@ -1,0 +1,79 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: #17171c;
+  color: white;
+}
+
+.board {
+  width: calc(64px*8);
+  height: calc(64px*8);
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.cell {
+  width: 64px;
+  height: 64px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cell img {
+  width: 49px;
+  height: 49px;
+  position: relative;
+}
+
+.black {
+  background-color: #7573DB;
+}
+.white {
+  background-color: #9FCEF5;
+}
+
+.selected {
+  background-color: #EB59B8;
+}
+
+.available {
+
+
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+  background-color: #011CE0;
+}
+
+.player__text{
+  padding: 30px;
+  margin: 30px;
+
+}
+
+.lost {
+  height: calc(50vh - 60px);
+  padding: 30px;
+  margin-left: 50px;
+  background-color: #2a2a31;
+}
+.lost div {
+  margin: 10px;
+}
+
+.restart {
+  background: rgba(0, 0, 0, 0);
+  border: 2px solid teal;
+  border-radius: 10%;
+  color: white;
+}
