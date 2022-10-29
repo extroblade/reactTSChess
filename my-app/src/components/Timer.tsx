@@ -8,14 +8,21 @@ interface TimerProps {
 }
 
 const Timer: FC<TimerProps> = ({currentPlayer, restart}) => {
-    const [blackTime, setBlackTime] = useState(3)
-    const [whiteTime, setWhiteTime] = useState(3)
+    const [blackTime, setBlackTime] = useState(300)
+    const [whiteTime, setWhiteTime] = useState(300)
     const timer = useRef<null | ReturnType<typeof setInterval>>(null)
 
     useEffect(() => {
         startTimer();
-    }, [currentPlayer])
+        //endTime();off till buttton
+    }, [currentPlayer, timer.current])
 
+
+    function endTime(){
+        if ( blackTime===0 || whiteTime===0 ){
+            handleRestart()
+        }
+    }
     function startTimer(){
         if(timer.current){
             clearInterval(timer.current);
@@ -40,6 +47,7 @@ const Timer: FC<TimerProps> = ({currentPlayer, restart}) => {
         setWhiteTime(300)
         setBlackTime(300)
         restart()
+
     }
     return (
         <div>

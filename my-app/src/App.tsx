@@ -27,6 +27,7 @@ const App = () => {
         newBoard.initCells()
         newBoard.addFigures()
         setBoard(newBoard)
+        setCurrentPlayer(whitePlayer)
     }
     return (
         <div className="App">
