@@ -1,2 +1,2 @@
 # reactChess
-chess - react typescript
+chess on typescript react
