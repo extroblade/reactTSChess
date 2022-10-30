@@ -1,7 +1,5 @@
 import React, {FC} from 'react';
 import { Cell } from '../models/Cell';
-import {Simulate} from "react-dom/test-utils";
-import click = Simulate.click;
 
 interface CellProps {
     cell: Cell

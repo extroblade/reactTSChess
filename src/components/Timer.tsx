@@ -6,20 +6,24 @@ interface TimerProps {
     currentPlayer: Player | null;
     restart: () => void;
 }
+const defaultTime = 3000;
 
 const Timer: FC<TimerProps> = ({currentPlayer, restart}) => {
-    const [blackTime, setBlackTime] = useState(300)
-    const [whiteTime, setWhiteTime] = useState(300)
+    const [blackTime, setBlackTime] = useState(defaultTime)
+    const [whiteTime, setWhiteTime] = useState(defaultTime)
     const timer = useRef<null | ReturnType<typeof setInterval>>(null)
 
     useEffect(() => {
         startTimer();
-        //endTime();off till buttton
+        endTime();
     }, [currentPlayer, timer.current])
 
 
     function endTime(){
-        if ( blackTime===0 || whiteTime===0 ){
+        if ( blackTime===0 ){
+            handleRestart()
+        }
+        if ( whiteTime===0 ){
             handleRestart()
         }
     }
@@ -44,18 +48,19 @@ const Timer: FC<TimerProps> = ({currentPlayer, restart}) => {
     }
 
     const handleRestart = () => {
-        setWhiteTime(300)
-        setBlackTime(300)
+        setWhiteTime(defaultTime)
+        setBlackTime(defaultTime)
         restart()
 
     }
     return (
         <div>
-            <div>
+            <div className={'left__btns'}>
                 <button className={'restart'} onClick={handleRestart}>Restart game</button>
+                <h2>Черные - {blackTime}</h2>
+                <h2>Белые - {whiteTime}</h2>
             </div>
-            <h2>Черные - {blackTime}</h2>
-            <h2>Белые - {whiteTime}</h2>
+
         </div>
     );
 };

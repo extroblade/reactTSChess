@@ -12,9 +12,12 @@
 
   background-color: #17171c;
   color: white;
+  overflow-y: hidden; /* Hide vertical scrollbar */
+  overflow-x: hidden; /* Hide horizontal scrollbar */
 }
 
 .board {
+  border: 1px solid white;
   width: calc(64px*8);
   height: calc(64px*8);
   display: flex;
@@ -62,18 +65,31 @@
 }
 
 .lost {
+  width: 200px;
+  display: flex;
+  flex-direction: column;
   height: calc(50vh - 60px);
   padding: 30px;
   margin-left: 50px;
   background-color: #2a2a31;
 }
 .lost div {
+  flex-direction: row;
   margin: 10px;
+  width: 20px;
 }
+
 
 .restart {
   background: rgba(0, 0, 0, 0);
   border: 2px solid teal;
   border-radius: 10%;
   color: white;
+}
+
+
+.left__btns{
+  margin: 30px;
+  padding: 30px;
+  border: 3px solid white;
 }
