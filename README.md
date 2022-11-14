@@ -1,2 +1,3 @@
-# reactChess
-chess on typescript react
+# TypeScript React Chess
+
+only figure's logic (no w/l)
